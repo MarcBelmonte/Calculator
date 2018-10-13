@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 case R.id.subBtn:
                     substratct=true;
                     numbers[0]=Double.parseDouble(a);//el numero se guarde en a
-                    display.setText("");//Para que no se vea el signo de restar
+                    display.setText("");//Para que no se vea el signo
                     decimal=false;
                 case R.id.addBtn:
                     add=true;
@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     tan=true;
                     numbers[0]=Double.parseDouble(a);
                     display.setText("");
-                    result = Math.tan(numbers[0]*Math.PI/180);//Tiene que estar en radianes la variable
+                    result = Math.tan(numbers[0]*Math.PI/180);//Resultado en deg
                     display.setText(String.valueOf(result));
                     decimal=false;
                     break;
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     cos=true;
                     numbers[0]=Double.parseDouble(a);
                     display.setText("");
-                    result = Math.cos(numbers[0]*Math.PI/180);//Tiene que estar en radianes la variable
+                    result = Math.cos(numbers[0]*Math.PI/180);//Resultado en deg
                     display.setText(String.valueOf(result));
                     decimal=false;
                     break;
@@ -172,23 +172,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     sin=true;
                     numbers[0]=Double.parseDouble(a);
                     display.setText("");
-                    result = Math.sin(numbers[0]*Math.PI/180);//Tiene que estar en radianes la variable
+                    result = Math.sin(numbers[0]*Math.PI/180);//Resultado en deg
                     display.setText(String.valueOf(result));
                     decimal=false;
                     break;
                 case R.id.equalBtn:
                     numbers[1]=Double.parseDouble(a);
                     if(substratct){
-                        result=numbers[1]-numbers[2];
+                        result=numbers[0]-numbers[1];
                         display.setText((String.valueOf(result)));
                     }else if(add==true){
-                        result=numbers[1]+numbers[2];
+                        result=numbers[0]+numbers[1];
                         display.setText((String.valueOf(result)));
                     }else if(division==true){
-                        result=numbers[1]/numbers[2];
+                        result=numbers[0]/numbers[1];
                         display.setText((String.valueOf(result)));
                     }else if(multiply==true){
-                        result=numbers[1]*numbers[2];
+                        result=numbers[0]*numbers[1];
                         display.setText((String.valueOf(result)));
                     }
                     decimal=false;
